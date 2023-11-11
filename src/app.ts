@@ -15,6 +15,7 @@ app
   .use('/', participantsRouter)
   .use('/', gamesRouter)
   .use('/', betsRouter)
+  .use('/games', gamesRouter)
   
 export function init(): Promise<Express> {
   connectDb();

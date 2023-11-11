@@ -13,6 +13,16 @@ class GamesRepository {
       },
     });
   }
+  async finishGame(id: number, homeTeamScore: number, awayTeamScore: number) {
+    return prisma.jogo.update({
+      where: { id },
+      data: {
+        homeTeamScore,
+        awayTeamScore,
+        isFinished: true,
+      },
+    });
+  }
 }
 
 export default new GamesRepository();
