@@ -4,6 +4,6 @@ import validateBetMiddleware from '@/middlewares/betsMiddleware';
 
 const betsRouter = Router();
 
-betsRouter.post('/bets', validateBetMiddleware, betsController.createBet);
+betsRouter.post('/', validateBetMiddleware, betsController.createBet);
 
 export default betsRouter;

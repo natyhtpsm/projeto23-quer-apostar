@@ -11,6 +11,9 @@ class ParticipantsRepository {
             },
         });
     }
+    async getAllParticipants() {
+        return prisma.usuario.findMany();
+    }
 }
 
 export default new ParticipantsRepository();

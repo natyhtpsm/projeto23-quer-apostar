@@ -4,6 +4,7 @@ import validateParticipantMiddleware from '@/middlewares/participantsMiddleware'
 
 const participantsRouter = Router();
 
-participantsRouter.post('/participants', validateParticipantMiddleware, participantsController.createParticipant);
+participantsRouter.post('/', validateParticipantMiddleware, participantsController.createParticipant);
+participantsRouter.get('/', participantsController.getAllParticipants);
 
 export default participantsRouter;

@@ -5,7 +5,7 @@ import validateFinishGameMiddleware from '@/middlewares/gamesMiddlewareFinish';
 
 const gamesRouter = Router();
 
-gamesRouter.post('/games', validateGameMiddleware, gamesController.createGame);
+gamesRouter.post('/', validateGameMiddleware, gamesController.createGame);
 gamesRouter.post('/:id/finish', validateFinishGameMiddleware, gamesController.finishGame);
 
 export default gamesRouter;

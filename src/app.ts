@@ -12,9 +12,8 @@ app
   .use(cors())
   .use(express.json())
   .get('/health', (_req, res) => res.send('OK!'))
-  .use('/', participantsRouter)
-  .use('/', gamesRouter)
-  .use('/', betsRouter)
+  .use('/participants', participantsRouter)
+  .use('/bets', betsRouter)
   .use('/games', gamesRouter)
   
 export function init(): Promise<Express> {
