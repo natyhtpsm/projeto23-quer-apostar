@@ -40,7 +40,7 @@ CREATE TABLE "Aposta" (
 );
 
 -- AddForeignKey
-ALTER TABLE "Aposta" ADD CONSTRAINT "Aposta_gameId_fkey" FOREIGN KEY ("gameId") REFERENCES "Jogo"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Aposta" ADD CONSTRAINT "Aposta_participantId_fkey" FOREIGN KEY ("participantId") REFERENCES "Usuario"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Aposta" ADD CONSTRAINT "Aposta_participantId_fkey" FOREIGN KEY ("participantId") REFERENCES "Usuario"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Aposta" ADD CONSTRAINT "Aposta_gameId_fkey" FOREIGN KEY ("gameId") REFERENCES "Jogo"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
