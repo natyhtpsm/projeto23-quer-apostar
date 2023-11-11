@@ -7,5 +7,6 @@ const gamesRouter = Router();
 
 gamesRouter.post('/', validateGameMiddleware, gamesController.createGame);
 gamesRouter.post('/:id/finish', validateFinishGameMiddleware, gamesController.finishGame);
+gamesRouter.get('/', gamesController.getAllGames);
 
 export default gamesRouter;

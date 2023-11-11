@@ -23,6 +23,9 @@ class GamesRepository {
       },
     });
   }
+  async getAllGames(){
+    return prisma.jogo.findMany();
+  }
 }
 
 export default new GamesRepository();

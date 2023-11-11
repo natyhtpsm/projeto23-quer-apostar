@@ -25,6 +25,15 @@ class GamesController {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   }
+  async getAllGames(req: Request, res: Response ){
+    try{
+      const allGames = await gamesService.getAllGames();
+      return res.status(200).json(allGames);
+    } catch(error){
+      console.log(error);
+      return res.status(500).json({ error: 'Internal Server Error'});
+    }
+  }
 }
 
 export default new GamesController();

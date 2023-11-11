@@ -7,6 +7,9 @@ class GamesService {
   async finishGame(id: number, homeTeamScore: number, awayTeamScore: number) {
     return gamesRepository.finishGame(id, homeTeamScore, awayTeamScore);
   }
+  async getAllGames(){
+    return gamesRepository.getAllGames();
+  }
 }
 
 export default new GamesService();
