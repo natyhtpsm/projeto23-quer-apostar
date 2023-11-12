@@ -15,3 +15,4 @@ const validateParticipantMiddleware = (req: Request, res: Response, next: NextFu
   next();
 };
 
+export default validateParticipantMiddleware;
