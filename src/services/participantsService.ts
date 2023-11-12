@@ -26,6 +26,9 @@ class ParticipantsService {
 
     return newBalance;
   }
+  async clearAllParticipants() {
+    return participantsRepository.clearAllParticipants();
+  }
 }
 
 export default new ParticipantsService();

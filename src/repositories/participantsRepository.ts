@@ -32,6 +32,9 @@ class ParticipantsRepository {
       },
     });
   }
+  async clearAllParticipants() {
+    return prisma.usuario.deleteMany({});
+  }
 }
 
 export default new ParticipantsRepository();
