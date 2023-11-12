@@ -7,7 +7,11 @@ const validateParticipantMiddleware = (req: Request, res: Response, next: NextFu
     return res.status(400).json({ error: 'Nome e saldo são obrigatórios.' });
   }
 
+  if (balance < 1000) {
+
+    return res.status(400).json({ error: 'O saldo inicial deve ser no mínimo R$ 10,00.' });
+  }
+
   next();
 };
 
-export default validateParticipantMiddleware;
