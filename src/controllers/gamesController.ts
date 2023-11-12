@@ -34,6 +34,21 @@ class GamesController {
       return res.status(500).json({ error: 'Internal Server Error'});
     }
   }
+  async getGameByIdWithBets(req: Request, res: Response) {
+    const gameId = parseInt(req.params.id);
+
+    try {
+      const gameWithBets = await gamesService.getGameByIdWithBets(gameId);
+      if (!gameWithBets) {
+        return res.status(404).json({ error: 'Game not found' });
+      }
+
+      return res.status(200).json(gameWithBets);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
 }
 
 export default new GamesController();

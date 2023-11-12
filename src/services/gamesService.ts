@@ -10,6 +10,9 @@ class GamesService {
   async getAllGames(){
     return gamesRepository.getAllGames();
   }
+  async getGameByIdWithBets(gameId: number) {
+    return gamesRepository.getGameByIdWithBets(gameId);
+  }
 }
 
 export default new GamesService();

@@ -26,6 +26,12 @@ class GamesRepository {
   async getAllGames(){
     return prisma.jogo.findMany();
   }
+  async getGameByIdWithBets(gameId: number) {
+    return prisma.jogo.findUnique({
+      where: { id: gameId },
+      include: { bets: true },
+    });
+  }
 }
 
 export default new GamesRepository();
