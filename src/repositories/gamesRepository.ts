@@ -32,6 +32,12 @@ class GamesRepository {
       include: { bets: true },
     });
   }
+  async getGameById(gameId: number) {
+    return prisma.jogo.findUnique({
+      where: { id: gameId },
+    });
+  }
+
 }
 
 export default new GamesRepository();

@@ -14,6 +14,24 @@ class ParticipantsRepository {
     async getAllParticipants() {
         return prisma.usuario.findMany();
     }
+    async getParticipant(participantId: number) {
+        return prisma.usuario.findUnique({
+          where: {
+            id: participantId,
+          },
+        });
+    }
+    
+  async updateBalance(participantId: number, newBalance: number) {
+    return prisma.usuario.update({
+      where: {
+        id: participantId,
+      },
+      data: {
+        balance: newBalance,
+      },
+    });
+  }
 }
 
 export default new ParticipantsRepository();
